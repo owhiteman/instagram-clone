@@ -45,6 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 hintText: 'Enter your email',
                 textInputType: TextInputType.emailAddress,
                 textEditingController: _emailController,
+                autoCorrect: false,
               ),
               //password
               const SizedBox(height: 24),
@@ -53,6 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 textInputType: TextInputType.text,
                 textEditingController: _emailController,
                 isPassword: true,
+                autoCorrect: false,
               ),
               //button
               const SizedBox(height: 24),

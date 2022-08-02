@@ -5,13 +5,15 @@ class TextFieldInput extends StatelessWidget {
   final bool isPassword;
   final String hintText;
   final TextInputType textInputType;
+  final bool autoCorrect;
 
   const TextFieldInput(
       {Key? key,
       required this.textEditingController,
       this.isPassword = false,
       required this.hintText,
-      required this.textInputType})
+      required this.textInputType,
+      required this.autoCorrect})
       : super(key: key);
 
   @override
@@ -31,6 +33,7 @@ class TextFieldInput extends StatelessWidget {
       ),
       keyboardType: textInputType,
       obscureText: isPassword,
+      autocorrect: autoCorrect,
     );
   }
 }
