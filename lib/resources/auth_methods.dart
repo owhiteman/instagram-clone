@@ -55,4 +55,23 @@ class AuthMethods {
     }
     return res;
   }
+
+  //Log in user
+  Future<String> loginUser(
+      {required String email, required String password}) async {
+    String res = "Some error occured";
+
+    try {
+      if (email.isNotEmpty || password.isNotEmpty) {
+        await _auth.signInWithEmailAndPassword(
+            email: email, password: password);
+        res = 'Success';
+      } else {
+        res = 'Please enter in both fields';
+      }
+    } catch (e) {
+      res = e.toString();
+    }
+    return res;
+  }
 }
